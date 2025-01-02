@@ -10,13 +10,13 @@ public class SwingingBaby : MonoBehaviour
 
     void Start()
     {
-        transform.position = new Vector3(0, transform.position.y, transform.position.z);
+        baby.position = new Vector3(0, baby.position.y, baby.position.z);
     }
 
     void FixedUpdate()
     {
         // Get current position
-        Vector3 currentPosition = transform.position;
+        Vector3 currentPosition = baby.position;
 
         // Move left when Q is pressed
         if (Input.GetKey(KeyCode.Q))
@@ -34,6 +34,6 @@ public class SwingingBaby : MonoBehaviour
         currentPosition.x = Mathf.Clamp(currentPosition.x, leftConstraint, rightConstraint);
 
         // Apply the new position
-        transform.position = currentPosition;
+        baby.position = currentPosition;
     }
 }
